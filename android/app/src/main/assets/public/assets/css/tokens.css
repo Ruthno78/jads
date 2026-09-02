@@ -1,0 +1,98 @@
+/* ==========================================================================
+ * JADSTACK LOTTO — FINAL DESIGN TOKENS (SEUL SOURCE DE VERITE)
+ * --------------------------------------------------------------------------
+ * REGLE: Okenn lòt fichye CSS pa dwe redefini varyab sa yo nan yon lòt
+ * blòk :root{}. Si yon coche gen bezwen yon nouvo varyab, ajoute l ISIT.
+ * Chak varyab gen yon valè LITERAL — pa gen self-référence (--x: var(--x)),
+ * pa gen "swap" ant --bg ak --text pou fè dark mode: chak tokè gen pwòp
+ * valè reyèl li, ni nan light ni nan dark.
+ * ========================================================================== */
+
+:root {
+  /* --- Mak / branding (fiks, pa chanje ant tèm) --- */
+  --brand-navy:#00345C;
+  --brand-blue:#035181;
+  --brand-lime:#A2C835;
+  --brand-lime-d:#8AAE24;
+
+  /* --- Semantik LIGHT (default) --- */
+  --primary:var(--brand-navy);
+  --primary-2:var(--brand-navy);
+  --primary-hover:#002943;
+  --primary-soft:#E8F0F5;
+  --primary-fg:#ffffff;
+
+  --accent:var(--brand-lime);
+  --accent-hover:var(--brand-lime-d);
+  --accent-soft:#EEF2F5;
+  --accent-fg:#12202B;
+
+  --success:#2F7D4F;      --success-soft:#E4F2E9;
+  --danger:#C0392B;       --danger-soft:#FBE6E3;
+  --warning:#B5810E;      --warning-soft:#FAF0D6;
+  --info:var(--brand-blue); --info-soft:#E6EFF6;
+
+  --bg:#F6F8FA; --bg-tint:#EEF2F5;
+  --surface:#ffffff; --surface-2:#F2F5F7; --surface-3:#E6EBEF;
+  --text:#12202B; --muted:#5B6B78;
+  --border:#DEE4E9; --border-strong:#C7D0D8;
+  --dark:#0A2E44;
+
+  /* Ikòn/tèks bar navigasyon anba a — pèmèt tokè spesifik san kase branding */
+  --nav-icon-idle:var(--brand-navy);
+  /* --brand-navy se yon fon FIKS (pa chanje ant light/dark), donk tèks/ikòn
+     sou li dwe toujou klè — pa depann de --primary-fg ki chanje ak tèm. */
+  --on-brand-navy:#ffffff;
+
+  --radius:14px; --radius-sm:9px; --radius-lg:22px; --radius-pill:999px;
+  --header-h:62px; --sidebar-w:252px; --sidebar-w-collapsed:70px;
+  --font-display:'Space Grotesk','Inter',system-ui,sans-serif;
+  --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px; --sp-7:32px; --sp-8:48px;
+  --easing:cubic-bezier(.2,.7,.2,1); --dur:180ms;
+  --shadow:0 1px 2px rgba(0,52,92,.05),0 4px 10px -4px rgba(0,52,92,.09);
+  --shadow-md:0 2px 6px rgba(0,52,92,.06),0 12px 26px -12px rgba(0,52,92,.18);
+  --shadow-lg:0 8px 22px rgba(0,52,92,.08),0 32px 64px -28px rgba(0,52,92,.24);
+}
+
+/* --------------------------------------------------------------------------
+ * DARK MODE — activé par [data-theme="dark"] sou <html>.
+ * SEL mekanis ofisyèl la. Chak valè se yon valè REYÈL, pa yon referans
+ * sikilè. Kontras verifye (>=4.5:1) pou tèks sou fon.
+ * ------------------------------------------------------------------------ */
+:root[data-theme="dark"] {
+  --primary:#4C8FC4;
+  --primary-2:#4C8FC4;
+  --primary-hover:#6BA6D6;
+  --primary-soft:#173349;
+  --primary-fg:#0B1622;
+
+  --accent:var(--brand-lime);
+  --accent-hover:#B7DC4F;
+  --accent-soft:#1E2B16;
+  --accent-fg:#0B1622;
+
+  --success:#4FAE78;      --success-soft:#173224;
+  --danger:#E2685A;       --danger-soft:#3A1C18;
+  --warning:#D9A73B;      --warning-soft:#3A2E10;
+  --info:#4C8FC4;         --info-soft:#152A38;
+
+  --bg:#0B1622; --bg-tint:#0F1D2C;
+  --surface:#122132; --surface-2:#16283C; --surface-3:#1C3247;
+  --text:#EAF0F4; --muted:#93A7B8;
+  --border:#22384A; --border-strong:#2E4A5F;
+  --dark:#0A2E44;
+
+  /* Sou fon fonse, ikòn navy pi bwouye — sèvi ak yon ton pi klè */
+  --nav-icon-idle:#8FB4CE;
+
+  --shadow:0 1px 2px rgba(0,0,0,.45),0 4px 12px -6px rgba(0,0,0,.55);
+  --shadow-md:0 2px 6px rgba(0,0,0,.5),0 16px 34px -16px rgba(0,0,0,.7);
+  --shadow-lg:0 4px 12px rgba(0,0,0,.55),0 34px 70px -26px rgba(0,0,0,.85);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;min-height:100%;}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.55;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}

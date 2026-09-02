@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">JadStack Lotto</string>
+    <!-- V95 — KOREKSYON: WebView la chaje PAJ AJAN lokal la (byen anndan APK
+         la, sèvi ak WebViewAssetLoader), li PA ale sou jadstacklotto.com
+         ankò kòm premye ekran. site_host rete itil pou rekonèt lyen ki
+         merite rete anndan WebView la (olye yo louvri nan navigatè). -->
+    <string name="asset_loader_domain">appassets.androidplatform.net</string>
+    <string name="site_url">https://appassets.androidplatform.net/assets/public/ajan.html</string>
+    <string name="site_host">jadstacklotto.com</string>
+    <string name="download_dir">JadStackLotto</string>
+    <string name="download_started">Telechajman kòmanse…</string>
+    <string name="exit_hint">Peze ankò pou soti</string>
+    <string name="perm_needed">Otorizasyon nesesè pou telechaje</string>
+
+    <!-- V87 — Push notifications + aksyon rapid -->
+    <string name="push_channel_name">Notifikasyon JADSTACK LOTTO</string>
+    <string name="push_channel_desc">Nouvo mesaj, gayan, ak alèt sistèm</string>
+    <string name="quick_actions_channel_name">Aksyon rapid</string>
+    <string name="quick_actions_channel_desc">Rakousi pèsistan pou aksyon frekan yo</string>
+    <string name="quick_actions_hint">Peze pou aksyon rapid</string>
+</resources>
